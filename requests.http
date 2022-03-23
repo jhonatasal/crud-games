@@ -1,0 +1,31 @@
+###Cadastrar novo Game
+POST http://localhost:8080/games
+Content-Type: application/json
+
+{
+    "name": "Uncharted",
+    "category":"Adventure",
+    "dateOfRelease":"2002-12-23"
+}
+### Buscar todos os Games
+GET http://localhost:8080/games
+Content-Type: application/json
+
+
+###Excluir Game por Id
+DELETE http://localhost:8080/games/623a2855fa284d77b5b8ef5d
+Content-Type: application/json
+
+###Buscar Game por Id
+GET http://localhost:8080/games/623a205a9465ca7075a5c318
+Content-Type: application/json
+
+###Atualizar dados Game
+PUT  http://localhost:8080/games/623a205a9465ca7075a5c318
+Content-Type: application/json
+
+{
+    "name": "Uncharted",
+    "category":"Adventure",
+    "dateOfRelease":"2013-08-23"
+}
