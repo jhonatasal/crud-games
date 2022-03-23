@@ -2,6 +2,6 @@ FROM openjdk
 
 WORKDIR /app
 
-COPY target/rentgame-0.0.1-SNAPSHOT.jar /app/rentgame.jar
+COPY target/rentgames-0.0.1-SNAPSHOT.jar /app/rentgames.jar
 
-ENTRYPOINT ["java","-jar", "portao.jar"] 
+ENTRYPOINT ["java","-jar", "rentgames.jar"] 
