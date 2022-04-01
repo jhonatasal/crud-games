@@ -67,22 +67,22 @@ public class RabbitMqConfigFanout {
 	// Bean que cria a exchange
 	@Bean(name = "exchangeNameFanout")
 	public FanoutExchange declareExchange() {
-		return ExchangeBuilder.directExchange(nomeDaExchangeFanout)// nome da exchange
+		return ExchangeBuilder.fanoutExchange(nomeDaExchangeFanout)// nome da exchange
 				.durable(false)// decide se a exchange é duravel ou não
 				.build();
 	}
 
 	@Bean//Esse metodo declara as filas e as ralaciona com a sua exchange e a sua routing key
 	public Declarables fanoutExchangeBindings(
-			@Qualifier("exchangeNameFanout") FanoutExchange directExchange,
+			@Qualifier("exchangeNameFanout") FanoutExchange fanoutExchange,
 			@Qualifier("queueTesteFanout1") Queue queueTesteFanout1,
 			@Qualifier("queueTesteFanout2") Queue queueTesteFanout2,
 			@Qualifier("queueTesteFanout3") Queue queueTesteFanout3) {
 		
 		return new Declarables(
-				BindingBuilder.bind(queueTesteFanout1).to(directExchange),
-				BindingBuilder.bind(queueTesteFanout2).to(directExchange),
-				BindingBuilder.bind(queueTesteFanout3).to(directExchange)
+				BindingBuilder.bind(queueTesteFanout1).to(fanoutExchange),
+				BindingBuilder.bind(queueTesteFanout2).to(fanoutExchange),
+				BindingBuilder.bind(queueTesteFanout3).to(fanoutExchange)
 				);
 	}
 	
