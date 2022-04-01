@@ -3,7 +3,7 @@ POST http://localhost:8080/games
 Content-Type: application/json
 
 {
-    "name": "Uncharted",
+    "name": "Uncharteda",
     "category":"Adventure",
     "dateOfRelease":"2002-12-23"
 }
@@ -29,3 +29,4 @@ Content-Type: application/json
     "category":"Adventure",
     "dateOfRelease":"2013-08-23"
 }
+

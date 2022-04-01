@@ -1,0 +1,27 @@
+#configurações spring
+spring:
+  data:
+    mongodb:
+      uri: mongodb://db/rentgames
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
+###configurações rabbitmq
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: admin
+    password: 123456
+      
+##configurações tipo direct      
+nome:
+  exchange:
+    rabbitmq: rent_games_exchange_direct
+  routingKey:
+    direct1: routing_key1
+    direct2: routing_key2
+    direct3: routing_key3
+  queue:
+    fila1: fila1
+    fila2: fila2
+    fila3: fila3

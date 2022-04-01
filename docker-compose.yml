@@ -1,6 +1,16 @@
 version: '3.4'
 
 services:
+  rabbitmq:
+    container_name: rabbitmq_rentgames
+    image: rabbitmq:3-management
+    restart: always
+    ports:
+      - 5672:5672
+      - 15672:15672
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin 
+      - RABBITMQ_DEFAULT_PASS=123456
   db:
     container_name: mongo_rentgame
     image: mongo:4.4.6
@@ -15,7 +25,7 @@ services:
     container_name: rentgame
     image: rentgameimage
     restart: always
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile
     command: mvn spring-boot:run

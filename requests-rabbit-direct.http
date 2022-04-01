@@ -1,0 +1,26 @@
+POST http://localhost:8080/games/direct/1
+Content-Type: application/json
+
+{
+    "name": "Uncharted",
+    "category":"Adventure",
+    "dateOfRelease":"2002-12-23"
+}
+#####
+POST http://localhost:8080/games/direct/2
+Content-Type: application/json
+
+{
+    "name": "Uncharted",
+    "category":"Adventure",
+    "dateOfRelease":"2002-12-23"
+}
+####
+POST http://localhost:8080/games/direct/3
+Content-Type: application/json
+
+{
+    "name": "Uncharted",
+    "category":"Adventure",
+    "dateOfRelease":"2002-12-23"
+}
