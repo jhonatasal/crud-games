@@ -2,26 +2,30 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://db/rentgames
+      uri: mongodb://10.0.0.147/rentgames
   mvc:
     pathmatch:
       matching-strategy: ant-path-matcher
 ###configurações rabbitmq
   rabbitmq:
-    host: rabbitmq
+    host: 10.0.0.147
     port: 5672
     username: admin
     password: 123456
       
-##configurações tipo direct      
+##configurações tipo topic      
 nome:
   exchange:
-    rabbitmq: rent_games_exchange_fanout
+    rabbitmq: rent_games_exchange_topic
   routingKey:
-    fanout1: routing_key1
-    fanout2: routing_key2
-    fanout3: routing_key3
+    topic1: routing.capital.mg
+    topic2: routing.capital.sp
+    topic3: routing.interior.sp
+    topic4: routing.capital.*
+    topic5: routing.interior.*
   queue:
-    fila1: fila1
-    fila2: fila2
-    fila3: fila3
+    fila1: routing-capital-mg
+    fila2: routing-capital-sp
+    fila3: routing-interior-sp
+    fila4: routing-todosdacapital
+    fila5: routing-todosdointerior
