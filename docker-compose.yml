@@ -11,6 +11,8 @@ services:
     environment:
       - RABBITMQ_DEFAULT_USER=admin 
       - RABBITMQ_DEFAULT_PASS=123456
+    networks:
+      - rentgame-network
   db:
     container_name: mongo_rentgame
     image: mongo:4.4.6
