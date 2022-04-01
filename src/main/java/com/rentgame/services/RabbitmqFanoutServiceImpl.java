@@ -5,15 +5,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rentgame.models.requests.GameRequest;
-import com.rentgame.services.interfaces.RabbitmqDirectService;
+import com.rentgame.services.interfaces.RabbitmqFanoutService;
 
 @Service
-public class RabbitmqDirectServiceImpl implements RabbitmqDirectService {
+public class RabbitmqFanoutServiceImpl implements RabbitmqFanoutService {
 	@Autowired
 	private RabbitTemplate rabbitTemplate;
 
 	@Override
-	public void sendMessageDirectKey(GameRequest game, String routingKeyName, String exchangeName) {
+	public void sendMessageFanoutKey(GameRequest game, String routingKeyName, String exchangeName) {
 		rabbitTemplate.convertAndSend(exchangeName, routingKeyName, game);
 	}
 
