@@ -52,7 +52,7 @@ public class GameRabbitMqResourceHeaders {
 		messageProperties.setHeader("Nome", "Jhonatas");
 		messageProperties.setHeader("Idade", 26);
 		System.out.println("-------------------------------");
-		System.out.println("Enviando mensagem onde todas os parametros do header batem");
+		System.out.println("Enviando mensagem onde todos os parametros do header batem");
 		rabbitmqHeadersService.sendMessageHeadersKey(mapNames.get("exchange"), messageProperties, request);
 	}
 	
@@ -61,7 +61,7 @@ public class GameRabbitMqResourceHeaders {
 		MessageProperties messageProperties = new MessageProperties();
 		messageProperties.setHeader("Nome", "Jhonatas");
 		System.out.println("-------------------------------");
-		System.out.println("Enviando mensagem onde todas os parametros do header batem");
+		System.out.println("Enviando mensagem onde algums ou todos os parametros do header batem");
 		rabbitmqHeadersService.sendMessageHeadersKey(mapNames.get("exchange"), messageProperties, request);
 	}
 }
