@@ -30,6 +30,9 @@ public class RabbitMqConfigDirect {
 	
 	@Value("${nome.routingKey.direct3}")
 	private String routingKeyDirect3;
+	
+	@Value("${nome.routingKey.dlq}")
+	private String routingKeydlq;
 	//ROUTING-KEY'S
 	//----------------------------------------------
 	
@@ -42,6 +45,8 @@ public class RabbitMqConfigDirect {
 
 	@Value("${nome.queue.fila3}")
 	private String queueTesteDirect3;
+	@Value("${nome.queue.dlq}")
+	private String queueTestedlq;
 	//NOME-FILAS
 	
 	
@@ -61,6 +66,11 @@ public class RabbitMqConfigDirect {
     public Queue queueTesteDirect3() {
         return new Queue(queueTesteDirect3, true);
     }
+    
+    @Bean(name = "queueTestedlq")
+    public Queue queueTestedlq() {
+    	return new Queue(queueTestedlq, true);
+    }
 	
 	//CRIAÇÃO DE FILAS
 
@@ -77,11 +87,15 @@ public class RabbitMqConfigDirect {
 			@Qualifier("exchangeNameDirect") DirectExchange directExchange,
 			@Qualifier("queueTesteDirect1") Queue queueTesteDirect1,
 			@Qualifier("queueTesteDirect2") Queue queueTesteDirect2,
-			@Qualifier("queueTesteDirect3") Queue queueTesteDirect3) {
+			@Qualifier("queueTesteDirect3") Queue queueTesteDirect3,
+			@Qualifier("queueTestedlq") Queue queueTestedlq
+			) {
 		return new Declarables(
 				BindingBuilder.bind(queueTesteDirect1).to(directExchange).with(routingKeyDirect1),
 				BindingBuilder.bind(queueTesteDirect2).to(directExchange).with(routingKeyDirect2),
-				BindingBuilder.bind(queueTesteDirect3).to(directExchange).with(routingKeyDirect3));
+				BindingBuilder.bind(queueTesteDirect3).to(directExchange).with(routingKeyDirect3),
+				BindingBuilder.bind(queueTestedlq).to(directExchange).with(routingKeydlq)
+		);
 	}
 	
 	@Bean(name = "mapnames")
@@ -92,6 +106,7 @@ public class RabbitMqConfigDirect {
 		mapNames.put("routingkey1", routingKeyDirect1);
 		mapNames.put("routingkey2", routingKeyDirect2);
 		mapNames.put("routingkey3", routingKeyDirect3);
+		mapNames.put("routingKeydlq", routingKeydlq);
 		return mapNames;
 	}
 }
