@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.rentgame.models.requests.GameRequest;
 import com.rentgame.services.interfaces.RabbitmqDirectService;
 
-import lombok.extern.slf4j.Slf4j;
-
 @RestController
 @RequestMapping(path = GameRabbitMqResourceDirect.URI)
 public class GameRabbitMqResourceDirect {
