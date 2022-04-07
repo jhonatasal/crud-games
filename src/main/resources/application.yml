@@ -1,0 +1,15 @@
+topic:
+  name1: topic1
+spring:
+  kafka:
+    bootstrap-servers: 10.0.0.147:9092
+    consumer:
+      group-id: grupo1
+  data: 
+    mongodb:
+      uri: mongodb://10.0.0.147/rentgames
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
+server:
+  port: 8084
