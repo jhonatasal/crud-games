@@ -2,13 +2,13 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://db/rentgames
+      uri: mongodb://10.0.0.147/rentgames
   mvc:
     pathmatch:
       matching-strategy: ant-path-matcher
 ###configurações rabbitmq
   rabbitmq:
-    host: rabbitmq
+    host: 10.0.0.147
     port: 5672
     username: admin
     password: 123456
@@ -25,3 +25,5 @@ nome:
     fila1: fila1
     fila2: fila2
     fila3: fila3
+server:
+  port: 8081
