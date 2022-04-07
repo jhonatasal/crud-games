@@ -29,3 +29,5 @@ nome:
     fila3: routing-interior-sp
     fila4: routing-todosdacapital
     fila5: routing-todosdointerior
+server:
+  port: 8083
