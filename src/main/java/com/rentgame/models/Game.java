@@ -1,6 +1,5 @@
 package com.rentgame.models;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.Id;
@@ -17,7 +16,7 @@ public class Game {
 	private String id;
 	private String name;
 	private String category;
-	private LocalDate dateOfRelease;
+	private String dateOfRelease;
 	private LocalDateTime registrationDate = LocalDateTime.now();
 
 }

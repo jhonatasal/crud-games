@@ -1,7 +1,5 @@
 package com.rentgame.models.dtos;
 
-import java.time.LocalDate;
-
 import com.rentgame.models.Game;
 
 import lombok.Data;
@@ -11,7 +9,7 @@ public class GameDto {
 	private String id;
 	private String name;
 	private String category;
-	private LocalDate dateOfRelease;
+	private String dateOfRelease;
 
 	public GameDto(Game game) {
 		this.id = game.getId();

@@ -1,5 +1,6 @@
 topic:
   name1: topic1
+  nameDlq: dlq
 spring:
   kafka:
     bootstrap-servers: 10.0.0.147:9092

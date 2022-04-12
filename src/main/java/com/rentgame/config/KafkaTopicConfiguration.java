@@ -10,12 +10,22 @@ import org.springframework.kafka.config.TopicBuilder;
 public class KafkaTopicConfiguration {
 	@Value("${topic.name1}")
 	private String nameTopic1;
+	
+	@Value("${topic.nameDlq}")
+	private String nameDql;
 
 	@Bean
 	public NewTopic topic1() {
 		return TopicBuilder
 				.name(nameTopic1)//nome do topico
 				.partitions(3) //o numero de partições determina a qtd de participantes de um grupo
+				.build();
+	}
+	
+	@Bean
+	public NewTopic dlq() {
+		return TopicBuilder
+				.name(nameDql)//nome do topico
 				.build();
 	}
 }
